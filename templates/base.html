@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=content-width, initial.scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <title>
+        {% block page__title%}
+            MY SITE
+        {% endblock page__title%}
+    </title>
+</head>
+<body>
+    <div class = "navbar">
+        <div class = "navlogo">
+            <img src="{% static 'book.jpg' %}" alt="">
+        </div>
+        <div class = "navlink">
+            <ul>
+                <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'about' %}">ABOUT</a></li>
+                <li><a href="{% url 'contact' %}">CONTACT</a></li>
+            {% if request.user.is_authenticated %}
+            <div class="dropdown">
+               <li> <button class="dropbtn">ARTİCLE <i class="fa-solid fa-chevron-down"></i></button></li>
+                <div class="dropdown-content">
+                  <a href="{% url 'our__articles' %}">Məqalələrimiz</a>
+                  <a href="{% url 'my__articles' %}">Məqalələrim</a>
+
+                </div>
+              </div>
+            <li><a href="{% url 'account:logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+            {% else %}
+                <li><a href="{% url 'account:login' %}">LOGIN</a></li>
+                <li><a href="{% url 'account:register' %}">REGISTER</a></li>   
+            {% endif %}  
+            </ul>
+        </div>
+    </div>
+    <div class = "container">
+    {% block body %}
+      
+    {% endblock body %}
+    </div> 
+</body>
+</html>
