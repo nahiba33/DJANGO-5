@@ -11,10 +11,10 @@ body{
     color: aliceblue;
 
 }
-a, i {
-    color: #000;
-    font-size: 20px;
+a {
+    color: inherit;
 }
+
 .container{
     width: 1200px;
     max-width: 90%;
@@ -29,6 +29,11 @@ a, i {
     align-items: center;
     padding: 5px 30px;
     background-color: bisque;
+    margin-bottom: 16px;
+}
+.navbar a {
+    color: black;
+    font-size: 18px;
 }
 .navlink ul {
     display: flex;
@@ -109,47 +114,4 @@ a, i {
 }
 
 .articles ul li{
-    list-style: decimal;
-}
-  
-.dropbtn {
-    background-color: bisque;
-    color: #000;
-    gap: 30px;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: rgb(158, 149, 108);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  
-  .dropdown-content a:hover {background-color:rgb(158, 149, 108);}
-  
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
+    list-style: decimal;}

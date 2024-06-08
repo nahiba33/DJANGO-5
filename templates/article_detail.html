@@ -1,13 +1,11 @@
 {% extends "base.html" %}
 {% block page__title %}
-   My Articles Page
+   Article Detail Page
 {% endblock page__title %}
 {% block body %}
    
    <div class="articles">
-      <h2>My Articles</h2>
    <ul>
-    {% for article in articles %}
        <li>
         <h3>{{article.author}}</h3>
         <h4>{{article.title}}</h4>
@@ -15,5 +13,5 @@
         <small>{{article.created_date}}</small>
       </li>
       <hr>
-    {% endfor %}
+    </div>
 {% endblock body %}

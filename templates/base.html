@@ -23,15 +23,10 @@
                 <li><a href="{% url 'about' %}">ABOUT</a></li>
                 <li><a href="{% url 'contact' %}">CONTACT</a></li>
             {% if request.user.is_authenticated %}
-            <div class="dropdown">
-               <li> <button class="dropbtn">ARTİCLE <i class="fa-solid fa-chevron-down"></i></button></li>
-                <div class="dropdown-content">
-                  <a href="{% url 'our__articles' %}">Məqalələrimiz</a>
-                  <a href="{% url 'my__articles' %}">Məqalələrim</a>
-
-                </div>
-              </div>
+            <li><a href="{% url 'articles' %}">ARTICLES</a></li>
+            <li><a href="{% url 'dashboard' %}"><i class="fa-solid fa-user"></i></a></li>
             <li><a href="{% url 'account:logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                </div>
             {% else %}
                 <li><a href="{% url 'account:login' %}">LOGIN</a></li>
                 <li><a href="{% url 'account:register' %}">REGISTER</a></li>   
